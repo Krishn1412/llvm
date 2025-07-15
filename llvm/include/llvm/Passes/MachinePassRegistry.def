@@ -42,6 +42,7 @@ FUNCTION_ANALYSIS("ssp-layout", SSPLayoutAnalysis())
 FUNCTION_ANALYSIS("target-ir", TargetIRAnalysis(std::move(TM.getTargetIRAnalysis())))
 #undef FUNCTION_ANALYSIS
 
+<<<<<<< HEAD
 #ifndef FUNCTION_PASS
 #define FUNCTION_PASS(NAME, CREATE_PASS)
 #endif
@@ -78,6 +79,8 @@ FUNCTION_PASS("wasm-eh-prepare", WasmEHPreparePass())
 FUNCTION_PASS("win-eh-prepare", WinEHPreparePass())
 #undef FUNCTION_PASS
 
+=======
+>>>>>>> 8cbcaee7fe3629554fa21e7a82efaf1be300af42
 #ifndef LOOP_PASS
 #define LOOP_PASS(NAME, CREATE_PASS)
 #endif
