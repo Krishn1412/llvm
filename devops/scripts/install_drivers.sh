@@ -133,6 +133,8 @@ InstallIGFX () {
   mkdir -p /usr/local/lib/igc/
   echo "$IGC_TAG" > /usr/local/lib/igc/IGCTAG.txt
   if [ "$IS_IGC_DEV" == "Yes" ]; then
+    # igc-dev runtime deps
+    apt update && apt install -yqq libllvm14 libllvm15 libz3-4
     # Dev IGC deb package did not include libopencl-clang
     # opencl-clang repo does not provide release deb package either.
     # Backup and install it from release igc as a temporarily workaround
