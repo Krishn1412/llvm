@@ -226,7 +226,7 @@ jobs:
       run: |
         if [ "${{ inputs.install_dev_igc_driver }}" = "true" ]; then
             # If libllvm14 is already installed (dev igc docker), still return true.
-            sudo apt-get install -yqq libllvm14 || true;
+            sudo apt-get install -yqq libllvm14 libllvm15 libz3-4 || true;
         fi
         sudo -E bash devops/scripts/install_drivers.sh devops/dependencies.json ${{ inputs.install_dev_igc_driver == 'true' && 'devops/dependencies-igc-dev.json --use-dev-igc' || '' }} --all
     - name: Source OneAPI TBB vars.sh
